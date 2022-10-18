@@ -360,4 +360,15 @@ public class BST<T extends Comparable<? super T>> {
 
         return false;
     }
+
+    public int countLeaves(){
+        return countLeaves(root);
+    }
+    private int countLeaves(BSTNode<T> node){
+        if (node == null || isLeaf(node.el))
+            return 0;
+
+        else
+            return 1 + countLeaves(node.left) + countLeaves(node.right);
+    }
 }

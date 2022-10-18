@@ -7,6 +7,10 @@ public class BST_Test {
 
         myBST.breadthFirst();
 
+        System.out.println("\n" + myBST.countLeaves());
+
+
+
     }
 }
 
