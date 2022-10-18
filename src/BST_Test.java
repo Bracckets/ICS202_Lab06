@@ -1,11 +1,12 @@
 public class BST_Test {
     public static void main(String[] args){
         BST myBST = new BST();
-        for (int i = 1; i < 7; i++){
-            myBST.insert(i);
-        }
-        myBST.inorder();
 
-        System.out.println("\n" + myBST.count());
+        myBST.insert(3);     myBST.insert(2);    myBST.insert(5);
+        myBST.insert(1);     myBST.insert(4);    myBST.insert(6);
+
+        myBST.breadthFirst();
+
     }
 }
+

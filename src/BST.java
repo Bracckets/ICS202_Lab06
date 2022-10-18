@@ -337,9 +337,27 @@ public class BST<T extends Comparable<? super T>> {
     public int count(){
         return count(root);
     }
-    private int count(BSTNode<T> p){
+
+    protected int count(BSTNode<T> p){
         if (p == null) {return 0;}
 
         else {return 1 + count(p.left) + count(p.right);}
+    }
+
+    public boolean isLeaf(T value){
+        return isLeaf(value, root);
+    }
+    private boolean isLeaf(T value, BSTNode<T> node){
+        if (value.compareTo(node.el) == 0) {
+            if (node.left == null && node.right == null) {
+                return true;
+            }
+        }
+        else if (value.compareTo(node.el) < 0)
+            return isLeaf(value, node.left);
+        else
+            return isLeaf(value, node.right);
+
+        return false;
     }
 }
