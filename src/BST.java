@@ -333,4 +333,13 @@ public class BST<T extends Comparable<? super T>> {
     public void balance(T data[]) {
         balance(data,0,data.length-1);
     }
+
+    public int count(){
+        return count(root);
+    }
+    private int count(BSTNode<T> p){
+        if (p == null) {return 0;}
+
+        else {return 1 + count(p.left) + count(p.right);}
+    }
 }
