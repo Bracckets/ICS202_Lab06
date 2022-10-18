@@ -338,7 +338,7 @@ public class BST<T extends Comparable<? super T>> {
         return count(root);
     }
 
-    protected int count(BSTNode<T> p){
+    private int count(BSTNode<T> p){
         if (p == null) {return 0;}
 
         else {return 1 + count(p.left) + count(p.right);}
@@ -373,4 +373,20 @@ public class BST<T extends Comparable<? super T>> {
         else
             return countLeaves(node.left) + countLeaves(node.right);
     }
+
+    public int height(){
+        return height(root);
+
+    }
+    private int height(BSTNode<T> node){
+        if (node == null)
+            return 0;
+
+        if (node.left == null && node.right == null)
+            return 1;
+
+        else
+            return height(node.left) + height(node.right);
+    }
+
 }
