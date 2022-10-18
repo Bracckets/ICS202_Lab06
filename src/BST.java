@@ -365,10 +365,12 @@ public class BST<T extends Comparable<? super T>> {
         return countLeaves(root);
     }
     private int countLeaves(BSTNode<T> node){
-        if (node == null || isLeaf(node.el))
+        if (node == null)
             return 0;
+        if (isLeaf(node.el))
+            return 1;
 
         else
-            return 1 + countLeaves(node.left) + countLeaves(node.right);
+            return countLeaves(node.left) + countLeaves(node.right);
     }
 }
