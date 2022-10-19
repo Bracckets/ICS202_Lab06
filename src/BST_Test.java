@@ -3,7 +3,7 @@ public class BST_Test {
         BST myBST = new BST();
 
         myBST.insert(8);     myBST.insert(4);    myBST.insert(9);
-        myBST.insert(2);    myBST.insert(7);
+        myBST.insert(2);     myBST.insert(7);    myBST.insert(6);
 
         System.out.print("Breadth-First traversal prints: ");
         myBST.breadthFirst();

@@ -386,7 +386,9 @@ public class BST<T extends Comparable<? super T>> {
             return 1;
 
         else
-            return height(node.left) + height(node.right);
+            if (height(node.left) > height(node.right))
+            return height(node.left) + 1;
+            else return height(node.right) + 1;
     }
 
 }
